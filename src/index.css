@@ -1,0 +1,129 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-inter;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-montserrat;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-green text-white font-medium px-6 py-3 rounded hover:bg-green-light transition-all duration-300 transform hover:scale-105 shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border-2 border-white text-white font-medium px-6 py-3 rounded hover:bg-white/10 transition-all duration-300 transform hover:scale-105;
+  }
+  
+  .section-title {
+    @apply font-montserrat font-bold text-3xl md:text-4xl mb-6 relative inline-block;
+  }
+  
+  .section-title::after {
+    content: "";
+    @apply block w-1/2 h-1 bg-green mt-2;
+  }
+  
+  .nav-link {
+    @apply relative overflow-hidden;
+  }
+  
+  .nav-link::after {
+    content: "";
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-green transform scale-x-0 transition-transform duration-300 origin-left;
+  }
+  
+  .nav-link:hover::after {
+    @apply scale-x-100;
+  }
+  
+  .parallax-bg {
+    @apply bg-fixed bg-center bg-cover;
+  }
+}
+
+.transition-all-slow {
+  transition: all 0.5s ease-in-out;
+}
+
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.animate-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.animate-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.7s ease-out;
+}
+
+.animate-delay-100 { animation-delay: 100ms; }
+.animate-delay-200 { animation-delay: 200ms; }
+.animate-delay-300 { animation-delay: 300ms; }
+.animate-delay-400 { animation-delay: 400ms; }
+.animate-delay-500 { animation-delay: 500ms; }
+
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #C7A257 0%, #D8B87A 50%, #C7A257 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
