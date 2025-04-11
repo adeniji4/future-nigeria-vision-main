@@ -5,7 +5,11 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-   base: '/future-nigeria-vision-main/',
+   base: mode === 'production'
+  ? (process.env.DEPLOY_TARGET === 'GH_PAGES'
+      ? '/future-nigeria-vision-main/'
+      : '/')
+  : '/',
   server: {
     host: "::",
     port: 8080,
