@@ -1,11 +1,14 @@
 {
   "name": "vite_react_shadcn_ts",
+  "homepage": "https://adeniji4.github.io/future-nigeria-vision-main",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "predeploy": "vite build",
+    "deploy": "gh-pages -d dist",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
